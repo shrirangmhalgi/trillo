@@ -25,9 +25,14 @@
   background-color: var(--color-grey-dark-1);
   //flex basis is the property that controls size of the flex item
   flex: 0 0 18%; //flex grow, flex shrink and flex basis
+  display: flex;
+  flex-direction: column; //this changes the direction of main axis to column.
+  justify-content: space-between;
 }
 
 .hotel-view{
   background-color: #fff;
   flex: 1; //it should grow over all the available space.
+
+  height: 80rem;
 }
