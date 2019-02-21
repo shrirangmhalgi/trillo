@@ -304,16 +304,79 @@
 
 ////////////////////////////////////////////
 //paragraph
-.paragraph:not(:last-of-type){
+.paragraph:not(:last-of-type){ //last of type is the pseudo class which finds last of type.
   margin-bottom: 2rem;
 }
 
 
 ////////////////////////////////////////////
 //list
+.list{
+  list-style: none;
+  margin: 3rem 0;
+  padding: 3rem 0;
+  border-top: 1px solid var(--color-grey-light-1);
+  border-bottom: 1px solid var(--color-grey-light-1);
 
+  display: flex;
+  flex-wrap: wrap; //it wraps to the new lines
+
+  &__item{
+    flex: 0 0 50%;
+    margin-bottom: 0.7rem;
+  }
+
+  &__item::before{
+    content: "";
+    display: inline-block;
+    height: 2rem;
+    width: 2rem;
+    margin-right: 0.7rem;
+
+    //older browsers
+    //background-image: url("../img/SVG/chevron-small-right.svg"); //this includes the default color of the svg.. but we want to chnage the color to pink.
+    //background-size: cover;
+
+    //newer browsers
+    //masking
+    background-color: var(--color-primary);
+    -webkit-mask-image: url("../img/SVG/chevron-small-right.svg"); //you can see through the image just like a transparent image
+    -webkit-mask-size: cover;//fills the entire part of the size
+    mask-image: url("../img/SVG/chevron-small-right.svg");
+    mask-size: cover;
+  }
+}
 
 
 
 ////////////////////////////////////////////
 //recommend
+.recommend{
+  font-size: 1.3rem;
+  color: var(--color-grey-dark-3);
+
+  display: flex;
+  align-items: center;
+  // justify-content: space-between;
+
+  &__count{
+    margin-right: auto;
+  }
+
+  &__friend{
+
+  }
+
+  &__photo{
+    box-sizing: content-box; //padding and margin not included in content-box
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    border: 3px solid #fff;
+
+    &:not(:last-child){
+      margin-right: -1.5rem;
+    }
+  }
+
+}
