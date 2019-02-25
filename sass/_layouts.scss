@@ -2,7 +2,8 @@
   max-width: 120rem;
   margin: 8rem auto;
   background-color: var(--color-grey-light-1);
-  box-shadow: var(--shadow-dark);
+  -webkit-box-shadow: var(--shadow-dark);
+          box-shadow: var(--shadow-dark);
 
   min-height: 50rem;
 
@@ -18,22 +19,33 @@
   font-size: 1.4rem;
   background-color: #fff;
   border-bottom: 1px solid var(--color-grey-light-2);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between; //space is distributed evenly in between.
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; //space is distributed evenly in between.
   align-items: center; //vertically items are centered
 
   @media only screen and (max-width: $bp-smallest){
-    flex-wrap: wrap; //we are allowing items to grow
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; //we are allowing items to grow
     height: 11rem;
-    align-content: space-around;
+    -ms-flex-line-pack: distribute;
+        align-content: space-around;
   }
 }
 
 .content{
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 
   @media only screen and (max-width: $bp-medium){
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 
@@ -42,17 +54,24 @@
   //flex basis is the property that controls size of the flex item
   flex: 0 0 18%; //flex grow, flex shrink and flex basis
   display: flex;
-  flex-direction: column; //this changes the direction of main axis to column.
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; //this changes the direction of main axis to column.
   justify-content: space-between;
 }
 
 .hotel-view{
   background-color: #fff;
-  flex: 1; //it should grow over all the available space.
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1; //it should grow over all the available space.
 }
 
 .detail{
   font-size: 1.4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding: 4.5rem;
   background-color: var(--color-grey-light-1);
@@ -63,15 +82,21 @@
   }
 
   @media only screen and (max-width: $bp-small){
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 
 .description{
   background-color: #fff;
-  box-shadow: var(--shadow-light);
+  -webkit-box-shadow: var(--shadow-light);
+          box-shadow: var(--shadow-light);
   padding: 3rem;
-  flex: 0 0 60%;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 60%;
+          flex: 0 0 60%;
   margin-right: 4.5rem;
 
   @media only screen and (max-width: $bp-medium){
@@ -86,8 +111,17 @@
 }
 
 .user-reviews{
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
